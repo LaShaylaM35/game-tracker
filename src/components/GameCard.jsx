@@ -1,10 +1,11 @@
-import React, { useState, useEffect } from "react";
+import React from 'react'
+import { Cards } from './Cards'
 
 
-export const GameCard = () => {
-  const [game, setGame] = useState([]);
+export const SupabaseClient = () => {
+  const [games, setGames] = useState([]);
 
-  const getGame = async () => {
+  const getGames = async () => {
     const url =
       import.meta.env.VITE_SUPABASE_URL;
     const token = import.meta.env.VITE_TOKEN;
@@ -18,18 +19,23 @@ export const GameCard = () => {
 
     const data = await response.json();
 
-    setGame(data);
+    getGames(data);
   };
 
-  useEffect(() => {
-    getGame();
-  }, []);
+  
 
   return (
     <>
-      {game.map((item) => (
-        <Card key={item.id} title={item.title} genre={item.genre} rating={item.rating} />
-      ))}
+      
+ {games.map((game) => (
+    <Cards key={game.id} title={game.title} genre={game.genre} rating={game.rating} />
+  ))}
+
     </>
   );
 };
+
+
+
+
+

@@ -1,6 +1,8 @@
 import React , {useState, useEffect } from 'react'
-import { useNavigate } from 'react-router-dom';
-import { createGame } from '../services/gamesService';  
+  import { useNavigate } from 'react-router-dom';
+import { createGame } from '../services/gamesService';
+
+
 
 export const GameForm = () => {
 
