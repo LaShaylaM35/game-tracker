@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { HashRouter, Routes, Route } from "react-router-dom";
 import { HomePage } from "./pages/HomePage";
 import "./App.css";
 import { AddGamePage } from "./pages/AddGamePage";
@@ -13,12 +13,12 @@ function App() {
   return (
     <>
       <NavBar />
-      <BrowserRouter>
+      <HashRouter>
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/addgamepage" element={<AddGamePage />} />
         </Routes>
-      </BrowserRouter>
+      </HashRouter>
     </>
   );
 }
