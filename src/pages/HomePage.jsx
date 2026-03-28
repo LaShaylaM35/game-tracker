@@ -1,6 +1,6 @@
 
 import { useState, useEffect } from "react";
-import { GameCard } from "./components/GameCard";
+import { GameCard } from "../components/GameCard";
 
 export const HomePage = () => {
   return (
@@ -27,6 +27,8 @@ export const HomePage = () => {
      
      
      <GameCard />
+
+     
      
      </>
   );

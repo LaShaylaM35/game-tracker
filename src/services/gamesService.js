@@ -45,6 +45,31 @@ export const getGames = async () => {
       setGames(data);
    
     }
+
+
+
+    export const deleteGame = async (id)=>{
+
+    const newUrl = `${url}formtable?&id=eq.${id}`
+    const response = await fetch(newUrl, {
+        method: "DELETE", 
+        headers: {
+            'apikey' : token, 
+            'Content-Type': 'application/json'
+        }, 
+        
+    });
+
+    if (response.ok){
+        const data= {message : "Game Deleted", state: true}
+        return data;
+    }else{
+        const data = await response.json()
+        console.log(data);
+        return data;
+    }
+
+}
     
 
 

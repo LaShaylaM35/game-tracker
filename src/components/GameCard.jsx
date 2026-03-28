@@ -1,8 +1,8 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import { Cards } from './Cards'
 
 
-export const SupabaseClient = () => {
+export const GameCard = () => {
   const [games, setGames] = useState([]);
 
   const getGames = async () => {
@@ -19,10 +19,12 @@ export const SupabaseClient = () => {
 
     const data = await response.json();
 
-    getGames(data);
+    setGames(data);
   };
 
-  
+  useEffect(() => {
+    getGames();
+  }, []);
 
   return (
     <>
